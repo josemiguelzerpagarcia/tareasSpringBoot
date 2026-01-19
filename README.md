@@ -5,18 +5,18 @@
 
 ## 2) Repositorio (fork) y gestión de versiones
 - Repositorio base: https://github.com/profeInformatica101/tareasSpringBoot
-- Enlace a MI fork: [PON AQUÍ EL ENLACE CUANDO LO CREES]
+- Enlace a MI fork: (https://github.com/josemiguelzerpagarcia/tareasSpringBoot#)
 - Nº de commits realizados: (mínimo 5)
 
 ## 3) Arquitectura
 Explica brevemente cómo has organizado:
-- Controller:
-- Service:
-- Repository:
-- Entity:
+- VideojuegoController:
+- VideojuegoService:
+- VideojuegoRepository:
+- VideojuegoEntity:
 
 ## 4) Base de datos elegida (marca una)
-- [ ] H2
+- [*] H2
 - [ ] MySQL
 - [ ] PostgreSQL
 
