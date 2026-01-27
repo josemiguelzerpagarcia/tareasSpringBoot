@@ -82,6 +82,20 @@
 
     </ul>
 </div>
+<!-- fragmentos/buscador.html -->
+<div th:fragment="buscador">
+    <form action="#" th:action="@{/estudiantes}" method="get" class="d-flex mb-3">
+        <!-- Campo de texto (nombre) -->
+        <input type="text"
+               name="nombre"
+               th:value="${nombreBusqueda}"
+               placeholder="Buscar por nombre…"
+               class="form-control me-2"
+               aria-label="Nombre">
 
+        <!-- Botón de búsqueda -->
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+</div>
 </body>
 </html>
