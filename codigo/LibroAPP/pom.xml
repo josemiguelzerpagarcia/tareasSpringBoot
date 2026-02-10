@@ -8,8 +8,8 @@
 		<version>4.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>es.biblioteca</groupId>
-	<artifactId>LibroAPP</artifactId>
+	<groupId>es.game</groupId>
+	<artifactId>Videojuego</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>LibroAPP</name>
 	<description>Ejemplo aplicación de Libros</description>

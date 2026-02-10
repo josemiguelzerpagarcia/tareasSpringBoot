@@ -1,13 +1,13 @@
-package es.biblioteca.LibroAPP;
+package es.game.Videojuego;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LibroAppApplication {
+public class VideojuegoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LibroAppApplication.class, args);
+		SpringApplication.run(VideojuegoApplication.class, args);
 	}
 
 }
