@@ -23,7 +23,7 @@ import jakarta.transaction.Transactional;
 	    @Override
 	    public Videojuego crear (Videojuego videojuego) {
 	        normalizar(videojuego);
-	        if (repositorio.existsById(videojuego.getId())) {
+	        if (videojuego.getId() != null) {
 	            throw new IllegalArgumentException("Id ya existe");
 	        }
 

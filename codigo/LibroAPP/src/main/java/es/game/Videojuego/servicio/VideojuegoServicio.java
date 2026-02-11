@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import es.game.Videojuego.entidad.Videojuego;
 
 public interface VideojuegoServicio {
-	Videojuego crear(Videojuego libro);
-	Videojuego actualizar(Integer id, Videojuego libro);
+	Videojuego crear(Videojuego videojuego);
+	Videojuego actualizar(Integer id, Videojuego videojuego);
     Optional<Videojuego> buscarPorId(Integer id);
     List<Videojuego> listar();
     void eliminar(Integer id);
