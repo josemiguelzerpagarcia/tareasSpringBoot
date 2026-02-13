@@ -28,6 +28,10 @@ public class VideojuegoControlador {
         this.videojuegoServicio = videojuegoServicio;
     }
     
+     @GetMapping("/")
+     public String rootRedirect() {
+	        return "redirect:/catalogo";
+	    }
     
 	 @GetMapping("/catalogo")
 	    public String listado(Model model) {
@@ -73,7 +77,7 @@ public class VideojuegoControlador {
 	        return "detalles";
 	    }
 	 
-	 @GetMapping("/videojuegos/{id}/eliminar")
+	 @GetMapping("/videojuegos/eliminar/{id}")
 	    public String eliminarVideojuego(@PathVariable int id) {
 	        videojuegoServicio.eliminar(id);
 	        return "redirect:/catalogo";
