@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <!-- Required meta tags -->
@@ -27,19 +27,19 @@
             <td><span th:text="${videojuego.desarrollador}"></span></td>
             <td><span th:text="${videojuego.precio}"></span></td>
 			<td><span th:text="${videojuego.descripcion}"></span></td>
-            <td>
+            <td sec:authorize="hasAnyRole('USER', 'ADMIN')">
                 <a th:href="@{/videojuegos/detalles/{id}(id=${videojuego.id})}">
                     Ver detalle
                 </a>
             </td>
 
-            <td>
+            <td sec:authorize="hasRole('ADMIN')">
                 <a th:href="@{/videojuego/editar/{id}(id=${videojuego.id})}">
                     Editar
                 </a>
             </td>
 
-            <td>
+            <td sec:authorize="hasRole('ADMIN')">
                 <a th:href="@{/videojuegos/eliminar/{id}(id=${videojuego.id})}">
                     Eliminar
                 </a>
