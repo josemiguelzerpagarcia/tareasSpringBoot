@@ -1,4 +1,4 @@
-CRUD MVC con Thymeleaf — RA3
+📘 RA3 (DAW II) — Entrega y rúbrica
 1) Datos del alumno/a
   Entidad elegida Videojuego
 2) Repositorio (fork) y gestión de versiones
