@@ -8,8 +8,8 @@ import es.game.Videojuego.entidad.Videojuego;
 
 public interface VideojuegoServicio {
 	Videojuego crear(Videojuego videojuego);
-	Videojuego actualizar(Integer id, Videojuego videojuego);
-    Optional<Videojuego> buscarPorId(Integer id);
+	void actualizar(Videojuego videojuego);
+    Videojuego buscarPorId(Integer id);
     List<Videojuego> listar();
     void eliminar(Integer id);
 

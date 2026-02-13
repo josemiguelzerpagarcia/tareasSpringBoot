@@ -2,6 +2,7 @@ package es.game.Videojuego.controlador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -41,6 +42,13 @@ public class VideojuegoControlador {
 	        return "crear";
 	    }
 	 
+	 @GetMapping("/videojuego/editar/{id}")
+	    public String obtenerProducto(@PathVariable Integer id, Model model) {
+	        Videojuego videojuego = videojuegoServicio.buscarPorId(id);
+	        model.addAttribute("videojuego", videojuego);
+	        return "crear";
+	    }
+	 
 	 @PostMapping("/crear")
 	    public String guardarVideojuego(@Valid Videojuego videojuego,
 	                                  BindingResult bindingResult) {
@@ -52,15 +60,23 @@ public class VideojuegoControlador {
 	        if (videojuego.getId() == null) {
 	        	videojuegoServicio.crear(videojuego);
 	        } else {
-	        	videojuegoServicio.actualizar(videojuego.getId(), videojuego);
+	        	videojuegoServicio.actualizar(videojuego);
 	        }
 	        return "redirect:/catalogo";
 	    }
 	 
-	 @GetMapping("/crear/{id}")
-	    public String obtenerProducto(@PathVariable int id, Model model) {
+	 
+	 @GetMapping("/videojuegos/detalles/{id}")
+	    public String obtenerVideojugo(@PathVariable Integer id, Model model) {
 	        Videojuego videojuego = videojuegoServicio.buscarPorId(id);
 	        model.addAttribute("videojuego", videojuego);
 	        return "detalles";
 	    }
+	 
+	 @GetMapping("/videojuegos/{id}/eliminar")
+	    public String eliminarVideojuego(@PathVariable int id) {
+	        videojuegoServicio.eliminar(id);
+	        return "redirect:/catalogo";
+	    }
+	 
 }

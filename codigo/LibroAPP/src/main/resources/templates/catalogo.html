@@ -28,13 +28,13 @@
             <td><span th:text="${videojuego.precio}"></span></td>
 			<td><span th:text="${videojuego.descripcion}"></span></td>
             <td>
-                <a th:href="@{/videojuegos/{id}(id=${videojuego.id})}">
+                <a th:href="@{/videojuegos/detalles/{id}(id=${videojuego.id})}">
                     Ver detalle
                 </a>
             </td>
 
             <td>
-                <a th:href="@{/videojuegos/{id}/editar(id=${videojuego.id})}">
+                <a th:href="@{/videojuego/editar/{id}(id=${videojuego.id})}">
                     Editar
                 </a>
             </td>

@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-
 import es.game.Videojuego.entidad.Videojuego;
 import es.game.Videojuego.repositorio.VideojuegoRepositorio;
 import jakarta.transaction.Transactional;
@@ -31,21 +30,17 @@ import jakarta.transaction.Transactional;
 	    }
 
 	    @Override
-	    public Videojuego actualizar(Integer id, Videojuego videojuego) {
-	        normalizar(videojuego);
-
-	        Videojuego existente = repositorio.findById(id)
-	                .orElseThrow(() -> new IllegalArgumentException("Videojuego no encontrado con id=" + id));
-
-	        existente.setTitulo(videojuego.getTitulo());
-
-	        return repositorio.save(existente);
-	    }
+		public void actualizar(Videojuego videojuego) {
+			if(repositorio.existsById(videojuego.getId())) {
+				repositorio.save(videojuego);
+			}
+			
+		}
 
 	    @Override
 	    @Transactional
-	    public Optional<Videojuego> buscarPorId(Integer id) {
-	        return repositorio.findById(id);
+	    public Videojuego buscarPorId(Integer id) {
+	        return repositorio.findById(id).orElse(null);
 	    }
 
 	    @Override
